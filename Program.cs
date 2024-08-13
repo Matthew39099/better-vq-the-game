@@ -18,7 +18,7 @@ namespace vg_the_game
         public static double armour = 0.1;
         public static double weapon = 0.5;
         public static double xp = 0;
-        public static int pen = 0; 
+        public static int pen = 0;
         public static int roomid;
         public static double difficulty = 0.1;
         public static string EnemyName;
@@ -188,7 +188,7 @@ namespace vg_the_game
             Console.WriteLine("You realize you are missing you favorite trusty bottle of Newplymouth Navy Gin \nPress Enter to continue");
             Console.ReadLine();
             Console.WriteLine("Mission: Find your bottle of Newplymouth Navy Gin! \nSo you can go home and have a great weekend!");
-            Console.WriteLine("Press enter to start"); 
+            Console.WriteLine("Press enter to start");
             Console.ReadLine();
             roomid = 0;
             armour = 0;
@@ -207,7 +207,7 @@ namespace vg_the_game
 
             Console.Clear();
             roomid = 1;
-            Console.WriteLine("You are in the Office \nPress Enter to Continue" );
+            Console.WriteLine("You are in the Office \nPress Enter to Continue");
             Console.ReadLine();
             Console.WriteLine("Your constant printing of rain forests paper for your math exams, has enraged the office lady  \n Press Enter to continue");
             Console.ReadLine();
@@ -256,26 +256,7 @@ namespace vg_the_game
                 Console.WriteLine("You spot a pen lying on the ground, it seems appears to be the last Te Pūkenga BIT pen? ");
                 Thread.Sleep(1000);
 
-                    Console.WriteLine("Would you like to pick up the pen (1) or leave it on the ground as there are better things to find (0)");
-                    temp = Console.ReadLine();
-                    input = Convert.ToInt32(temp);
-
-                    if (input == 1)
-                    {
-                        Console.WriteLine("You have picked up the pen");
-                        pen = 1;
-                    }
-                    else
-                    {
-                        pen = 0; //If there is a chance they somehow go back and don't pick up the pen (Can be removed later)
-                        Console.WriteLine("You choose not to pick up the pen it probably wasn't important");
-                    }
-                }
-            
-
-                Console.WriteLine("You spot a pen lying on the ground, it seems appears to be the last Te Pūkenga BIT pen? \nPress Enter to continue");
-                Console.ReadLine();
-                Console.WriteLine("Would you like to pick up the pen (1) or leave it on the ground find? (0)");
+                Console.WriteLine("Would you like to pick up the pen (1) or leave it on the ground as there are better things to find (0)");
                 temp = Console.ReadLine();
                 input = Convert.ToInt32(temp);
 
@@ -284,16 +265,35 @@ namespace vg_the_game
                     Console.WriteLine("You have picked up the pen");
                     pen = 1;
                 }
-                else if (input == 0)
+                else
                 {
                     pen = 0; //If there is a chance they somehow go back and don't pick up the pen (Can be removed later)
                     Console.WriteLine("You choose not to pick up the pen it probably wasn't important");
                 }
-                else
-                {
-                    Console.WriteLine("Please select from the displayed options");
-                }
             }
+
+
+            Console.WriteLine("You spot a pen lying on the ground, it seems appears to be the last Te Pūkenga BIT pen? \nPress Enter to continue");
+            Console.ReadLine();
+            Console.WriteLine("Would you like to pick up the pen (1) or leave it on the ground find? (0)");
+            temp = Console.ReadLine();
+            input = Convert.ToInt32(temp);
+
+            if (input == 1)
+            {
+                Console.WriteLine("You have picked up the pen");
+                pen = 1;
+            }
+            else if (input == 0)
+            {
+                pen = 0; //If there is a chance they somehow go back and don't pick up the pen (Can be removed later)
+                Console.WriteLine("You choose not to pick up the pen it probably wasn't important");
+            }
+            else
+            {
+                Console.WriteLine("Please select from the displayed options");
+            }
+        
 
 
 
