@@ -95,6 +95,15 @@ namespace vg_the_game
             EnemyName = Victor.name;
             DamageMod = 1.6;
         }
+        static void Grayson()
+        {
+            Enemy Grayson;
+            Grayson.name = "Grayson";//sets enemy name
+            Grayson.enemyHealth = 50;// sets enemy health
+            EnemyHealth = Grayson.enemyHealth;// overides the last enemies health
+            EnemyName = Grayson.name;
+            DamageMod = 2;
+        }
 
         static void Equiptment()
         {
@@ -656,6 +665,42 @@ namespace vg_the_game
                     Console.WriteLine("You got a sword");
                 }
             } while (choice != 1 && choice !=2);
+            LVL2Hallway();
+        }
+
+        static void common_room()
+        {
+            string? choice;
+
+            if(D102id == 1)
+            {
+                Console.WriteLine("You have already visited here, you have been sent back to the hallway");
+                hallway();
+            }
+
+            Console.WriteLine("You are in the common room and Grason is relaxing on the sofa, sipping away on his coffee.");
+            Console.WriteLine("You walk in and he decides to test your knowledge!");
+            Console.WriteLine("Suddenly he asks you a riddle you must answer");
+            Console.WriteLine("Hidden in lines of code, my presence is not grand. But left unchecked havoc i can command.");
+            Console.WriteLine("What am i?");
+            choice = Console.ReadLine().ToLower();
+
+            switch (choice)
+            {
+                case "bug":
+                    Console.WriteLine("Correct");
+                    break;
+                case "a bug":
+                    Console.WriteLine("Correct");
+                    break;
+                default:
+                    Console.WriteLine("Incorrect");
+                    Thread.Sleep(2000);
+                    Console.Clear();
+                    Grayson();
+                    fight();
+                    break;
+            }
             LVL2Hallway();
         }
 
